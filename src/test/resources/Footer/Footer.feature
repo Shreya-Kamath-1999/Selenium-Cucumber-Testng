@@ -1,7 +1,7 @@
 @feature_footer
 Feature: Test cases for footer
 
-  @homepage1
+  @footer
   Scenario: Test case for checking footer on home page
     Given the homepage is loaded on login
     And I verify Twitter icon on the footer

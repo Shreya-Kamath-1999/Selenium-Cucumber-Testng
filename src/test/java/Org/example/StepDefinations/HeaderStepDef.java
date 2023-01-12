@@ -1,17 +1,13 @@
 package Org.example.StepDefinations;
 
 import Org.example.MethodDefinations.Header;
+import Org.example.MethodDefinations.HomePage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import org.testng.Assert;
 
 public class HeaderStepDef {
     Header header=new Header();
-    @Given("the user has logged in")
-    public void theUserHasLoggedIn() {
-
-    }
-
     @And("I verify menu icon")
     public void iVerifyMenuIcon() {
         Assert.assertTrue(header.verifyMenuIcon(),"Menu is not displayed");

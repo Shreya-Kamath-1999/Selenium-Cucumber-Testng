@@ -6,10 +6,10 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class CartPage extends PageInstance {
-    @FindBy(xpath="//span[@title='Your Cart']")
+    @FindBy(xpath="//span[text()='Your Cart']")
     WebElement cartPageTitle;
 
-    @FindBy(xpath="//button[@id='checkout')]")
+    @FindBy(xpath="//button[@id='checkout']")
     WebElement checkoutButton;
 
     public CartPage(){
@@ -21,7 +21,8 @@ public class CartPage extends PageInstance {
         return cartPageTitle.isDisplayed();
     }
 
-    public void clickOnCheckButton() {
+    public void clickOnCheckButton() throws InterruptedException {
+        Thread.sleep(2000);
         checkoutButton.click();
 
     }

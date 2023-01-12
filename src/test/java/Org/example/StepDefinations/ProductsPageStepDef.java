@@ -9,12 +9,12 @@ public class ProductsPageStepDef {
 
     ProductPage productpage=new ProductPage();
     @Then("Product page of {string} is displayed")
-    public void productPageOfIsDisplayed(String productName) {
+    public void productPageOfIsDisplayed(String productName) throws InterruptedException {
         Assert.assertTrue(productpage.isProductPageDisplayed(productName),"Products does not match");
     }
 
     @And("I click on add to cart button on product page")
-    public void iClickOnAddToCartButtonOnProductPage() {
+    public void iClickOnAddToCartButtonOnProductPage() throws InterruptedException {
         Assert.assertTrue(productpage.clickOnAddToCart(),"Failed adding to cart");
     }
 }

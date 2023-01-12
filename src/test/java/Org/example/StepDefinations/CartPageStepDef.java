@@ -15,7 +15,7 @@ public class CartPageStepDef {
     }
 
     @And("I click on checkout button")
-    public void iClickOnCheckoutButton() {
+    public void iClickOnCheckoutButton() throws InterruptedException {
         cartpage.clickOnCheckButton();
     }
 }
