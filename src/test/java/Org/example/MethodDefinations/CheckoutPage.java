@@ -42,16 +42,15 @@ public class CheckoutPage extends PageInstance {
     public boolean verifyCheckoutPage(String pageNumber) {
         switch (pageNumber) {
             case "1":
-                return secondaryHeaderTitle.getText().equals("Checkout: Your Information");
+                return secondaryHeaderTitle.getText().equals("CHECKOUT: YOUR INFORMATION");
             case "2":
-                return secondaryHeaderTitle.getText().equals("Checkout: Overview");
+                return secondaryHeaderTitle.getText().equals("CHECKOUT: OVERVIEW");
 
             case "3":
-                return secondaryHeaderTitle.getText().equals("Checkout: Complete!");
+                return secondaryHeaderTitle.getText().equals("CHECKOUT: COMPLETE!");
             default:
                 System.out.println("Invalid option");
         }
-
         return false;
     }
 
@@ -63,17 +62,22 @@ public class CheckoutPage extends PageInstance {
         finishButton.click();
     }
 
-    public boolean isBackToHomeButtonDisplayed() {
-         return backHomeButton.isDisplayed();
+    public boolean isBackToHomeButtonDisplayed() throws InterruptedException {
+        Thread.sleep(2000);
+        return backHomeButton.isDisplayed();
     }
 
-    public void addFieldsOnCheckoutPage(String firstname, String lastname, String postalcode) {
+    public void addFieldsOnCheckoutPage(String firstname, String lastname, String postalcode) throws InterruptedException {
         FirstName.sendKeys(firstname);
-        FirstName.sendKeys(lastname);
-        FirstName.sendKeys(postalcode);
+        Thread.sleep(2000);
+        LastName.sendKeys(lastname);
+        Thread.sleep(2000);
+        Postalcode.sendKeys(postalcode);
+        Thread.sleep(2000);
     }
 
-    public String verifyPayment() {
+    public String verifyPayment() throws InterruptedException {
+        Thread.sleep(2000);
         return payment.getText();
     }
 

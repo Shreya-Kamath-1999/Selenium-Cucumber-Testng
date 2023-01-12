@@ -7,13 +7,13 @@ import org.openqa.selenium.support.PageFactory;
 
 public class Footer extends PageInstance {
 
-    @FindBy(xpath="//a[contains(text(),'Twitter,)]")
+    @FindBy(xpath="//a[contains(text(),'Twitter')]")
     WebElement twitter;
 
-    @FindBy(xpath="//a[contains(text(),'Facebook,)]")
+    @FindBy(xpath="//a[contains(text(),'Facebook')]")
     WebElement facebook;
 
-    @FindBy(xpath="//a[contains(text(),'LinkedIn,)]")
+    @FindBy(xpath="//a[contains(text(),'LinkedIn')]")
     WebElement linkedIn;
 
     public Footer()
@@ -23,5 +23,15 @@ public class Footer extends PageInstance {
     }
 
 
+    public boolean verifyTwitterIcon() {
+        return twitter.isDisplayed();
+    }
 
+    public boolean verifyFacebookIcon() {
+        return facebook.isDisplayed();
+    }
+
+    public boolean verifyLinkedInIcon() {
+        return linkedIn.isDisplayed();
+    }
 }
