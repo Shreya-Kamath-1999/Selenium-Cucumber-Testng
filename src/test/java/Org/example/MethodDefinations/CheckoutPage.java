@@ -1,9 +1,14 @@
 package Org.example.MethodDefinations;
 
 import Org.example.Bage.PageInstance;
+import io.qameta.allure.Allure;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import java.io.ByteArrayInputStream;
 
 public class CheckoutPage extends PageInstance {
     @FindBy(xpath="//div[@class='header_secondary_container']/span")
@@ -64,6 +69,7 @@ public class CheckoutPage extends PageInstance {
 
     public boolean isBackToHomeButtonDisplayed() throws InterruptedException {
         Thread.sleep(2000);
+        Allure.addAttachment("Payment information",new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
         return backHomeButton.isDisplayed();
     }
 
@@ -78,6 +84,7 @@ public class CheckoutPage extends PageInstance {
 
     public String verifyPayment() throws InterruptedException {
         Thread.sleep(2000);
+        Allure.addAttachment("Payment information",new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
         return payment.getText();
     }
 
@@ -85,3 +92,4 @@ public class CheckoutPage extends PageInstance {
         return shipping.getText();
     }
 }
+
